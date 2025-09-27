@@ -23,6 +23,44 @@
 - código claro e testável (1).
 **** 
 **Variáveis:**
-> int inteiro_decimal;
+> int inteiro_decimal, algarismo[n];
+>
 
 **Fórmula:**
+> algarismo(N) = Resto(numero/2);
+
+> numero = (numero/2);
+
+.
+
+> algasrismo(N-1) = Resto(numrero/2);
+
+> numero = (numero/2)
+
+.
+
+> algasrismo(N-2) = Resto(numrero/2);
+
+> numero = (numero/2)
+
+.
+.
+.
+
+> algarismo(3) = Resto(numero/2);
+
+> numero = (numero/2);
+
+.
+
+> algasrismo(2) = Resto(numrero/2);
+
+> numero = (numero/2)
+
+.
+
+> algasrismo(1) = Resto(numrero/2);
+
+> numero = (numero/2)
+
+**Observações:** Talvez o ideal seja criar uma função para calcular e outra para concatenar os algarismos calculados separadamente.
