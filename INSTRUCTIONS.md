@@ -12,7 +12,8 @@
 
 ## Exercício 1 —
 #### Decimal inteiro → Binário (método das divisões sucessivas) (4 pts)
-**Tarefa:** Implemente dec_to_bin(n: int) -> str que converte um inteiro decimal (positivo, zero ou negativo) para binário sem usar bin().
+**Tarefa:** Implemente (que converte um inteiro decimal (positivo, zero ou negativo) para binário sem usar bin()):
+> dec_to_bin(n: int) -> str 
 
 **Regras/Detalhes:**
 
@@ -36,7 +37,8 @@
 ## Exercício 2 — 
 ### Binário → Decimal inteiro (método posicional) (3 pts)
 **Tarefa:** 
-Implemente bin_to_dec(b: str) -> int que converte uma string binária (com opcional-) para inteiro decimal.
+Implemente (que converte uma string binária (com opcional-) para inteiro decimal)
+> bin_to_dec(b: str) -> int 
 
 **Regras:**
 1. Valide que b contenha apenas 0 e 1 (ignorando um -    inicial).

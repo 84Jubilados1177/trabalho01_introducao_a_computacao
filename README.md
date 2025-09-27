@@ -12,7 +12,7 @@
 **Disciplina:** Introdução à Computação
 
 ****
-
+**Versão do Python:** 3.13.7
 (Instruções sobre este espaço e/ou formatação de como realizar os testes)
 
 ****
