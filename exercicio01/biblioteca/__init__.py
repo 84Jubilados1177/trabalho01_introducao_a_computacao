@@ -1,0 +1,3 @@
+from .funcionalidades import (
+    saudacao,
+)

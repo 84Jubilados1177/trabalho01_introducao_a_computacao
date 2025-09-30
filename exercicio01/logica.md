@@ -31,7 +31,7 @@
 
 > numero = (numero/2);
 
-.
+. 
 
 > algasrismo(N-1) = Resto(numrero/2);
 
