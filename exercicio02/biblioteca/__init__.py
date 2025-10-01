@@ -1,7 +1,6 @@
 from .funcionalidades import (
     Instrucoes,
     Algarismo,
-    Completa_zeros,
-    Em_binario,
+    Em_decimal,
     Testes
 )

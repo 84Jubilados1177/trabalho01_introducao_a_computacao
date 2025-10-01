@@ -8,13 +8,13 @@ while (opcao != 2):
     
     if opcao == 0:
         Testes()
-    elif opcao == 1:
+    if opcao == 1:
         continuar = 'S'
         while(continuar != 'N' and continuar != 'n'):
             invalido = True
-            print("--------Conversor para Binário:----------")
-            numero = int(input("Digite um número inteiro: "))
-            print("{} em binário: {}".format(numero, Em_binario(numero)))
+            print("--------Conversor para Decimal:----------")
+            numero = int(input("Digite um número em binário: "))
+            print("{} em Decimal: {}".format(numero, Em_decimal(numero, 2)))
             print("-----------------------------------------")
 
             while(invalido):
