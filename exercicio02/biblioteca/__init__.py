@@ -1,6 +1,6 @@
 from .funcionalidades import (
-    Instrucoes,
     Algarismo,
+    Confere_binario,
     Em_decimal,
     Testes
 )

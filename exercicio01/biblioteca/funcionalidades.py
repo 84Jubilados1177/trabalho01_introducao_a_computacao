@@ -1,12 +1,3 @@
-def Instrucoes():
-    print("-----------------------------------------")
-    print("Seja bem vindo ao conversor para binario!")
-    print("Para executar os testes digite a opção")
-    print("desejada:")
-    print("0 - Teste automatizado")
-    print("1 - Teste independente")
-    print("2 - Sair")
-
 def Algarismo(numero):
     algarismo = numero%2
     return int (algarismo)
@@ -26,6 +17,13 @@ def Completa_zeros(numero):
         zeros += "0"
 
     return zeros
+
+def Eh_numero_inteiro(variavel):
+    try:
+        int(variavel)
+        return True
+    except ValueError:
+        return False
 
 def Em_binario(numero):
     binario = ""

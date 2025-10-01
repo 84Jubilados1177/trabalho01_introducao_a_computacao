@@ -1,4 +1,5 @@
 from biblioteca import *
+from bibli_textos import *
 
 opcao = 1
 
@@ -12,28 +13,30 @@ while (opcao != 2):
         continuar = 'S'
         while(continuar != 'N' and continuar != 'n'):
             invalido = True
-            print("--------Conversor para Binário:----------")
-            numero = int(input("Digite um número inteiro: "))
-            print("{} em binário: {}".format(numero, Em_binario(numero)))
-            print("-----------------------------------------")
+            Sentenca()
 
+            while(invalido):
+                numero = input("Digite um número inteiro: ")
+                if(Eh_numero_inteiro(numero)):
+                    print("{} em binário: {}".format(numero, Em_binario(numero)))
+                    Linha()
+                    invalido = False
+                else:
+                    Erro(1)
+            invalido = True 
             while(invalido):
                 continuar = input("Deseja testar outro número? (S/N) ")
                 if(continuar == 'S' or continuar == 's' or continuar == 'N' or continuar == 'n'):
                     invalido = False
                     print(continuar)
                 elif(continuar != 'N' or continuar != 'n'):
-                    print("Entrada inválida, responda com (S/N) ")
-                    print("-----------------------------------------")
+                    Erro(2)
 
     elif opcao == 2: # Sai do codigo
-        print("-----------------------------------------")
-        print("saindo ...")
-        print("-----------------------------------------")
+        Saida()
         continue
     else:
-        print("-----------------------------------------")
-        print("Entrada inválida, responda com (0, 1 ou 2)")
+        Erro(3)
 
         
 
