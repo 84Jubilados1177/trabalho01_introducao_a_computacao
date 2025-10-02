@@ -22,7 +22,7 @@ def Saida():
 def Erro(Num_erro):
     if(Num_erro == 1):
         print("-" * 30)
-        print(("-" * 10) + "Eu acho que isso não é um binário :(" + ("-" * 10))
+        print(("-" * 10) + "Eu acho que isso não é um octal :(" + ("-" * 10))
 
     elif(Num_erro == 2):
         print("Entrada inválida, responda com (S/N) ")

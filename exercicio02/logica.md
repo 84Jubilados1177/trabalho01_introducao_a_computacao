@@ -25,40 +25,6 @@ Implemente (que converte uma string binária (com opcional-) para inteiro decima
 
 
 **Fórmula:**
-> algarismo(N) = Resto(numero/2);
-
-> numero = (numero/2);
-
-. 
-
-> algasrismo(N-1) = Resto(numrero/2);
-
-> numero = (numero/2)
-
-.
-
-> algasrismo(N-2) = Resto(numrero/2);
-
-> numero = (numero/2)
-
-.
-.
-.
-
-> algarismo(3) = Resto(numero/2);
-
-> numero = (numero/2);
-
-.
-
-> algasrismo(2) = Resto(numrero/2);
-
-> numero = (numero/2)
-
-.
-
-> algasrismo(1) = Resto(numrero/2);
-
-> numero = (numero/2)
+> #Fazer depois
 
 **Observações:** Talvez o ideal seja criar uma função para calcular e outra para concatenar os algarismos calculados separadamente.
