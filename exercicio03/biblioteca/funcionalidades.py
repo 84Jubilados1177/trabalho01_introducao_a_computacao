@@ -11,14 +11,6 @@ def Confere_octal(numero):
             octal = False
     return octal
 
-print("{}".format(Confere_octal("g")))
-print("{}".format(Confere_octal(15)))
-print("{}".format(Confere_octal(-10)))
-print("{}".format(Confere_octal(-15)))
-print("{}".format(Confere_octal(0)))
-print("{}".format(Confere_octal(8)))
-print("{}".format(Confere_octal(-92)))
-print("{}".format(Confere_octal(1091)))
 
 def Em_decimal(numero, base):
     negativo = False
