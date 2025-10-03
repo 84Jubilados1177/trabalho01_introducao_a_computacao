@@ -18,6 +18,13 @@ def Completa_zeros(numero):
 
     return zeros
 
+def Confere_decimal(numero):
+    try:
+        int(numero)
+        return True
+    except ValueError:
+        return False
+
 def Eh_numero_inteiro(variavel):
     try:
         int(variavel)

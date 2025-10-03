@@ -11,6 +11,12 @@ def Confere_octal(numero):
             octal = False
     return octal
 
+def Confere_decimal(numero):
+    try:
+        int(numero)
+        return True
+    except ValueError:
+        return False
 
 def Em_decimal(numero, base):
     negativo = False

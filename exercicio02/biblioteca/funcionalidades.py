@@ -8,6 +8,13 @@ def Confere_binario(numero):
             return False
     return True
 
+def Confere_decimal(numero):
+    try:
+        int(numero)
+        return True
+    except ValueError:
+        return False
+
 def Em_decimal(numero, base):
     negativo = False
     dec = 0

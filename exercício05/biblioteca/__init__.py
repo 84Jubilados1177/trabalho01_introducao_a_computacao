@@ -1,7 +1,5 @@
 from .funcionalidades import (
-    Algarismo,
-    Confere_binario,
     Confere_decimal,
-    Em_decimal,
+    Para_hexadecimal,
     Testes
 )

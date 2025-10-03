@@ -3,6 +3,13 @@ def Algarismo(numero):
     return int (algarismo)
 
 def Confere_decimal(numero):
+    try:
+        int(numero)
+        return True
+    except ValueError:
+        return False
+
+def Confere_decimal_str(numero):
     caracteres = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-']
     num = numero
     octal = True

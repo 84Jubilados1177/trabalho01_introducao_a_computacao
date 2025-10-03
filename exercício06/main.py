@@ -11,7 +11,7 @@ while (opcao != 2):
         opcao = int(auxiliar)
     else:
         opcao = 3 # erro
-    
+
     if opcao == 0:
         Testes()
     elif opcao == 1:
@@ -20,9 +20,9 @@ while (opcao != 2):
             invalido = True
             while (invalido):
                 Sentenca()
-                numero = input("Digite um número em octal: ")
-                if(Confere_octal(numero)):
-                    print("{} em Decimal: {}".format(numero, Em_decimal(int(numero), 8)))
+                numero = input("Digite um número em decimal: ")
+                if(Confere_decimal(numero)):
+                    print("{} em Hexadecimal: {}".format(numero, Para_hexadecimal(int(numero))))
                     invalido = False
                     Linha()
                 else:
