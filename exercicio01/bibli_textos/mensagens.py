@@ -1,17 +1,16 @@
 def Linha():
-    print("-" * 30)
+    print("-" * 50)
 
 def Instrucoes():
     Linha()
     print("Seja bem-vindo ao conversor para binário!")
-    print("Para executar os testes digite a opção")
-    print("desejada:")
+    print("Para executar os testes digite a opção desejada:")
     print("0 - Teste automatizado")
     print("1 - Teste independente")
     print("2 - Sair")
 
 def Sentenca():
-    print("--------Conversor para Binário:----------")
+    print(("-" * 12) + " Conversor para Binário: " + ("-" * 13))
 
 
 def Saida():
@@ -21,7 +20,7 @@ def Saida():
 
 def Erro(Num_erro):
     if(Num_erro == 1):
-        print("-" * 30)
+        print("-" * 50)
         print("Eu acho que isso não é um número inteiro :(")
         Linha()
 

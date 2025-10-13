@@ -61,7 +61,7 @@ def Em_bin_numero_nulo():
     assert Em_binario(0) == "0"
 
 def Testes():
-    print("-----------Teste automatizado------------")
+    print(("-" * 15) + " Teste automatizado " + ("-" * 15))
     print("Teste 1: {}".format(Em_bin_numero_positivo_par()))
     print("Teste 2: {}".format(Em_bin_numero_positivo_impar()))
     print("Teste 3: {}".format(Em_bin_numero_negativo_par()))

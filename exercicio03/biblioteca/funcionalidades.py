@@ -54,7 +54,7 @@ def Em_dec_numero_nulo():
     assert Em_decimal(0, 8) == "0"
 
 def Testes():
-    print("-----------Teste automatizado------------")
+    print(("-" * 15) + " Teste automatizado " + ("-" * 15))
     print("Teste com o numero 8: {}".format(Em_dec_numero_positivo_par()))
     print("Teste com o numero 13: {}".format(Em_dec_numero_positivo_impar()))
     print("Teste com o numero -8: {}".format(Em_dec_numero_negativo_par()))

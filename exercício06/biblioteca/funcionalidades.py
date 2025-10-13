@@ -41,54 +41,49 @@ def Mapeamento(resto):
     else:
         return int(resto)
 
-def Conversor(numero, contador, tam):
+def Conversor(numero, tamanho):
     algarismo = numero[0];
-    total = Mapeamento(algarismo) * (16 ** (tam - contador))
+    total = Mapeamento(algarismo) * (16 ** tamanho)
     
-    print("".format(Para_decimal("A11")))
     return total
 
 def Para_decimal(numero):
     negativo = False
-    resto = 0
     decimal = 0
-    cont = 0
     
     if(numero[0] == '-'):
         numero = numero[1:]    
         negativo = True
 
+    tamanho = Tamanho(numero) - 1
 
     while numero != "":
-        tam = Tamanho(numero)
-        decimal += Conversor(numero, cont, tam);
+        decimal += Conversor(numero, tamanho);
         numero = numero[1:]
-        print(numero)
-        cont += 1
+        tamanho -= 1
 
     if (negativo == True):
-        return ("-" + decimal)
+        return (decimal*-1)
     
     return decimal
 
-
-print("{}".format(Para_decimal("A11")))
-
 def Em_dec_numero_positivo_par():
-    assert Para_decimal(254) == "FE"
+    assert Para_decimal("FE") == 254
 def Em_dec_numero_positivo_impar():
-    assert Para_decimal(785) == "311"
+    assert Para_decimal("311") == 785
 def Em_dec_numero_negativo_par():
-    assert Para_decimal(-254) == "-FE"
+    assert Para_decimal("-FE") == -254
 def Em_dec_numero_negativo_impar():
-    assert Para_decimal(-785) == "-311"
+    assert Para_decimal("-311") == -785
 def Em_dec_numero_nulo():
-    assert Para_decimal(0) == "0"
+    assert Para_decimal("0") == 0
 
 def Testes():
-    print("-----------Teste automatizado------------")
-    print("Teste com o numero 254: {}".format(Em_dec_numero_positivo_par()))
-    print("Teste com o numero 785: {}".format(Em_dec_numero_positivo_impar()))
-    print("Teste com o numero -254: {}".format(Em_dec_numero_negativo_par()))
-    print("Teste com o numero -785: {}".format(Em_dec_numero_negativo_impar()))
-    print("Teste com o numero 0: {}".format(Em_dec_numero_nulo()))
+    print(("-" * 15) + "Teste automatizado" + ("-" * 15))
+    print("Teste com a string FE: {}".format(Em_dec_numero_positivo_par()))
+    print("Teste com a string 311: {}".format(Em_dec_numero_positivo_impar()))
+    print("Teste com a string -FE: {}".format(Em_dec_numero_negativo_par()))
+    print("Teste com a string -311: {}".format(Em_dec_numero_negativo_impar()))
+    print("Teste com a string 0: {}".format(Em_dec_numero_nulo()))
+
+Testes()

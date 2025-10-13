@@ -71,7 +71,7 @@ def Em_dec_numero_nulo():
     assert Para_hexadecimal(0) == "0"
 
 def Testes():
-    print("-----------Teste automatizado------------")
+    print(("-" * 15) + "Teste automatizado" + ("-" * 15))
     print("Teste com o numero 254: {}".format(Em_dec_numero_positivo_par()))
     print("Teste com o numero 785: {}".format(Em_dec_numero_positivo_impar()))
     print("Teste com o numero -254: {}".format(Em_dec_numero_negativo_par()))
