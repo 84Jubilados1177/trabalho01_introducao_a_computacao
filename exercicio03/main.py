@@ -10,7 +10,7 @@ while (opcao != 2):
     if(Confere_decimal(auxiliar)):
         opcao = int(auxiliar)
     else:
-        opcao = 3 # erro
+        opcao = 3 # Erro
     
     if opcao == 0:
         Testes()
@@ -20,9 +20,9 @@ while (opcao != 2):
             invalido = True
             while (invalido):
                 Sentenca()
-                numero = input("Digite um número em octal: ")
-                if(Confere_octal(numero)):
-                    print("{} em Decimal: {}".format(numero, Em_decimal(int(numero), 8)))
+                numero = input("Digite um número em decimal: ")
+                if(Confere_decimal(numero)):
+                    print("{} em octal: {}".format(numero, Em_decimal(int(numero), 10)))
                     invalido = False
                     Linha()
                 else:

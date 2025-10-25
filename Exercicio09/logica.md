@@ -1,25 +1,94 @@
-## Exercício 8 — 
-### Partes fracionárias: Decimal fracionário → Binário fracionário (4 pts)
+## Exercício 9 — 
+### Binário fracionário → Decimal fracionário (3 pts)
 **Tarefa:** Implemente:
-> decfrac_to_bin(x: float, max_frac_bits: int = 16) -> str.
+> binfrac_to_dec(b: str) -> float.
 
-Converta a parte inteira por divisões por 2 e a parte fracionária pelo método das multiplicações por 2, gerando até max_frac_bits bits após o ponto. 
-
-Arredonde por truncamento (não arredonde para cima).
+Aceite strings como "1010.101", "0.0001100110", com - opcional. Calcule a soma posicional:
+- parte inteira: potências de 2 positivas;
+- parte fracionária: potências de 2 negativas (½, ¼, ⅛, …).
 
 Exemplos:
-> decfrac_to_bin(10.625, max_frac_bits=8) → "1010.101"
+> binfrac_to_dec("1010.101") → 10.625
 
-> decfrac_to_bin(0.1, max_frac_bits=10) → retorna algo como "0.0001100110" (binário periódico truncado)
+> binfrac_to_dec("-0.01") → -0.25
 
-**Observações:**
-1. Para negativos, 
-2. trate o sinal e converta o módulo: -10.5 → "-1010.1".
-
-**Critérios (4 pts):**
-- Correção inteiro+fração (2), 
-- controle de precisão (1), 
-- negativos (1).
+**Critérios (3 pts):**
+- Correção (2), 
+- validação (1).
 
 **** 
 
+> decimal = 0
+
+.
+
+> parte_inteira = antes do ponto
+
+> parte_fracionaria = depois do ponto
+
+.
+
+> expoente_inteiro = 0
+
+(começa do último algarismo da parte inteira e vai aumentando)
+
+> valor_inteiro(N) = algarismo(N) * (2^expoente_inteiro);
+
+> decimal = decimal + valor_inteiro(N);
+
+> expoente_inteiro = expoente_inteiro + 1;
+
+.
+
+> valor_inteiro(N-1) = algarismo(N-1) * (2^expoente_inteiro);
+
+> decimal = decimal + valor_inteiro(N-1);
+
+> expoente_inteiro = expoente_inteiro + 1;
+
+.
+
+.
+
+.
+
+> valor_inteiro(1) = algarismo(1) * (2^expoente_inteiro);
+
+> decimal = decimal + valor_inteiro(1);
+
+> expoente_inteiro = expoente_inteiro + 1;
+
+> expoente_fracionario = -1
+
+(começa do primeiro algarismo depois do ponto e vai diminuindo)
+
+> valor_frac(1) = algarismo(1) * (2^expoente_fracionario);
+
+> decimal = decimal + valor_frac(1);
+
+> expoente_fracionario = expoente_fracionario - 1;
+
+.
+
+> valor_frac(2) = algarismo(2) * (2^expoente_fracionario);
+
+> decimal = decimal + valor_frac(2);
+
+> expoente_fracionario = expoente_fracionario - 1;
+
+.
+
+.
+
+.
+
+> valor_frac(K) = algarismo(K) * (2^expoente_fracionario);
+
+> decimal = decimal + valor_frac(K);
+
+> expoente_fracionario = expoente_fracionario - 1;
+
+> Caso tenha sinal:
+
+se começar com '-':
+> decimal = decimal * (-1)

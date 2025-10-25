@@ -1,5 +1,6 @@
 from .funcionalidades import (
     Confere_numero,
-    Ponto_flutuante_binario,
+    Confere_binario_flutuante,
+    binfrac_to_dec, 
     Testes
 )

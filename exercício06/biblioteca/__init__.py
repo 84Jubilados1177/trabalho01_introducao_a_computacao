@@ -1,5 +1,6 @@
 from .funcionalidades import (
+    Confere_hexadecimal,
     Confere_decimal,
-    Para_hexadecimal,
+    Para_decimal,
     Testes
 )

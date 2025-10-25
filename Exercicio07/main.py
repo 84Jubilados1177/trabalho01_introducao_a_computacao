@@ -21,12 +21,11 @@ while (opcao != 2):
             invalido = True
             while (invalido):
                 Sentenca()
-                numero = input("Digite um número em decimal: ")
-                base_original = int(input("Digite o valor inteiro da base do numero que acabou de digitar: "))
-                base_final = int(input("Digite o valor inteiro da base para a conversão: "))
+                numero = input("Digite um número em qualquer base\nentre 2 e 16: ")
+                base_original = int(input("Digite o valor da base do numero que\nacabou de digitar: "))
+                base_final = int(input("Digite o valor o da base final para a conversão: "))
                 if(numero):
-                    nome_base = Nomes_bases(base_final)
-                    print("{} em {}: {}".format(numero, nome_base,Transforma_bases(numero, base_original, base_final)))
+                    print("{} na base {}: {}".format(numero, Nomes_bases(base_final),Transforma_bases(numero, base_original, base_final)))
                     invalido = False
                     Linha()
                 else:

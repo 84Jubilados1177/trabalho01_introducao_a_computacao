@@ -4,7 +4,7 @@
 **Tarefa:** Implemente dec_to_oct(n: int) -> str via divisões sucessivas por 8.
 
 Exemplos:
-> dec_to_oct(93) → "135"
+> dec_to_oct(93) → "135" 
 
 > dec_to_oct(-64) → "-100"
 
@@ -15,40 +15,48 @@ Exemplos:
 **** 
 
 **Fórmula:**
-> algarismo(N) = Resto(numero/2);
+> octal = 0;
 
-> numero = (numero/2);
-
-. 
-
-> algasrismo(N-1) = Resto(numrero/2);
-
-> numero = (numero/2)
+> multiplicador = 1; // representa a posição do dígito (1, 10, 100, …)
 
 .
 
-> algasrismo(N-2) = Resto(numrero/2);
+> resto = decimal % 8;
 
-> numero = (numero/2)
+> decimal = decimal // 8;
+
+> octal = octal + resto * multiplicador;
+
+> multiplicador = multiplicador * 10;
+
+.
+
+> resto = decimal % 8;
+
+> decimal = decimal // 8;
+
+> octal = octal + resto * multiplicador;
+
+> multiplicador = multiplicador * 10;
+
+.
+
+> resto = decimal % 8;
+
+> decimal = decimal // 8;
+
+> octal = octal + resto * multiplicador;
+
+> multiplicador = multiplicador * 10;
 
 .
 .
 .
 
-> algarismo(3) = Resto(numero/2);
+> resto = decimal % 8;
 
-> numero = (numero/2);
+> decimal = decimal // 8;
 
-.
+> octal = octal + resto * multiplicador;
 
-> algasrismo(2) = Resto(numrero/2);
-
-> numero = (numero/2)
-
-.
-
-> algasrismo(1) = Resto(numrero/2);
-
-> numero = (numero/2)
-
-**Observações:** Talvez o ideal seja criar uma função para calcular e outra para concatenar os algarismos calculados separadamente.
+> multiplicador = multiplicador * 10;

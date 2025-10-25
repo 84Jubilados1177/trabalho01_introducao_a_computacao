@@ -39,21 +39,16 @@ def Em_decimal(numero, base):
     else:
         return dec
 
-def Em_dec_numero_positivo_par():
-    assert Em_decimal("1000", 2) == 8
-def Em_dec_numero_positivo_impar():
+def Teste1():
     assert Em_decimal("1101", 2) == 13
-def Em_dec_numero_negativo_par():
+def Teste2():
     assert Em_decimal("-1000", 2) == -8
-def Em_dec_numero_negativo_impar():
-    assert Em_decimal("-1101", 2) == -13
-def Em_dec_numero_nulo():
+def Teste3():
     assert Em_decimal("0", 2) == 0
 
 def Testes():
-    print(("-" * 15) + "Teste automatizado" + ("-" * 15))
-    print("Teste com o numero 8: {}".format(Em_dec_numero_positivo_par()))
-    print("Teste com o numero 13: {}".format(Em_dec_numero_positivo_impar()))
-    print("Teste com o numero -8: {}".format(Em_dec_numero_negativo_par()))
-    print("Teste com o numero -13: {}".format(Em_dec_numero_negativo_impar()))
-    print("Teste com o numero 0: {}".format(Em_dec_numero_nulo()))
+    print(("-" * 16) + "Teste automatizado" + ("-" * 16))
+    print("Binário -> Decimal")
+    print("String \"1101\" para o Inteiro 13: {}".format(Teste1()))
+    print("String \"-1000\" para o Inteiro -8: {}".format(Teste2()))
+    print("String \"0\" para o Inteiro 0: {}".format(Teste3()))

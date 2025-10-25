@@ -1,66 +1,69 @@
-#from bibli_banco.banco_de_dados import Mapeamento, Mapeamento_inverso
-
 def Confere_numero(numero):
     try:
         float(numero)
         return True
     except ValueError:
         return False
+    
+def Confere_binario_flutuante(numero):
+    caracteres = ['0', '1', '.', '-']
+    num = numero
+    octal = True
+    for i in num:
+        if not(i in caracteres):
+            octal = False
+    return octal
 
-def Binario_flutuante_para_decimal(numero):
+def binfrac_to_dec(b):
     negativo = False
 
-    # Verifica sinal
-    if numero[0] == '-':
+    if (b[0] == '-'):
         negativo = True
-        numero = numero[1:]
+        b = b[1:]
 
-    # Separa parte inteira e fracionária
-    if '.' in numero:
-        parte_inteira, parte_fracionaria = numero.split('.')
+    if '.' in b:
+        parte_inteira, parte_fracionaria = b.split('.')
     else:
-        parte_inteira, parte_fracionaria = numero, ""
+        parte_inteira, parte_fracionaria = b, ""
 
-    # Validação básica
     for c in parte_inteira + parte_fracionaria:
         if c not in "01":
             return None
 
-    # Parte inteira
     val_int = 0
     pot = 0
     for i in range(len(parte_inteira) - 1, -1, -1):
-        val_int += (parte_inteira[i] == '1') * (2 ** pot)
+        if parte_inteira[i] == '1':
+            val_int += 2 ** pot
         pot += 1
 
-    # Parte fracionária
     val_frac = 0
     pot = -1
     for c in parte_fracionaria:
-        val_frac += (c == '1') * (2 ** pot)
+        if c == '1':
+            val_frac += 2 ** pot
         pot -= 1
 
-    if(negativo):
-        return  ((val_int + val_frac)*-1)
-    
-    return (val_int + val_frac)
+    resultado = val_int + val_frac
 
-def Em_dec_numero_positivo_par():
-    assert Binario_flutuante_para_decimal(13) == "1101"
-def Em_dec_numero_positivo_impar():
-    assert Binario_flutuante_para_decimal(14.625) == "1110.101"
-def Em_dec_numero_negativo_par():
-    assert Binario_flutuante_para_decimal(-13) == "-1101"
-def Em_dec_numero_negativo_impar():
-    assert Binario_flutuante_para_decimal(-14.625) == "-1110.101"
-def Em_dec_numero_nulo():
-    assert Binario_flutuante_para_decimal(0) == "0"
+    if negativo:
+        resultado *= -1
+
+    return resultado
+
+def Teste1():
+    assert binfrac_to_dec("1010.101") == 10.625
+def Teste2():
+    assert binfrac_to_dec("-0.01") == -0.25
+def Teste3():
+    assert binfrac_to_dec("1101") == 13
+def Teste4():
+    assert binfrac_to_dec("0") == 0
 
 def Testes():
     print(("-" * 15) + "Teste automatizado" + ("-" * 15))
-    print("Teste com a string FE: {}".format(Em_dec_numero_positivo_par()))
-    print("Teste com a string 311: {}".format(Em_dec_numero_positivo_impar()))
-    print("Teste com a string -FE: {}".format(Em_dec_numero_negativo_par()))
-    print("Teste com a string -311: {}".format(Em_dec_numero_negativo_impar()))
-    print("Teste com a string 0: {}".format(Em_dec_numero_nulo()))
-    
+    print("Binário -> Decimal")
+    print("String \"1010.101\" para Real 10.625: {}".format(Teste1()))
+    print("String \"-0.01\" para Real -0.25: {}".format(Teste2()))
+    print("String \"13\" para Real 1101: {}".format(Teste3()))
+    print("String \"0\" para Real 0: {}".format(Teste4()))

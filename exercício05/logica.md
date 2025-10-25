@@ -1,4 +1,3 @@
-
 ## Exercício 5 — 
 ### Decimal inteiro → Hexadecimal (com letras maiúsculas) (3 pts)
 **Tarefa:** Implemente: (Use dígitos 0–9 e A–F.)
@@ -9,7 +8,6 @@ Exemplos:
 
 > dec_to_hex(4095) → "FFF"
 
-
 > dec_to_hex(-26) → "-1A"
 
 **Critérios (3 pts):**
@@ -18,40 +16,42 @@ Exemplos:
 **** 
 
 **Fórmula:**
-> algarismo(N) = Resto(numero/2);
-
-> numero = (numero/2);
-
-. 
-
-> algasrismo(N-1) = Resto(numrero/2);
-
-> numero = (numero/2)
+> hexadecimal = ""
+> negativo = False
 
 .
 
-> algasrismo(N-2) = Resto(numrero/2);
+> se decimal < 0:
+>.    decimal *= -1
+>.    negativo = True
 
-> numero = (numero/2)
+.
+
+> quociente = decimal
+
+.
+
+> resto = quociente % 16
+> quociente = quociente // 16
+> algarismo = mapear(resto) // 0–9 ou A–F
+> hexadecimal = algarismo + hexadecimal
+
+.
+
+> resto = quociente % 16
+> quociente = quociente // 16
+> algarismo = mapear(resto)
+> hexadecimal = algarismo + hexadecimal
+
+.
+
+> resto = quociente % 16
+> quociente = quociente // 16
+> algarismo = mapear(resto)
+> hexadecimal = algarismo + hexadecimal
 
 .
 .
 .
 
-> algarismo(3) = Resto(numero/2);
-
-> numero = (numero/2);
-
-.
-
-> algasrismo(2) = Resto(numrero/2);
-
-> numero = (numero/2)
-
-.
-
-> algasrismo(1) = Resto(numrero/2);
-
-> numero = (numero/2)
-
-**Observações:** Talvez o ideal seja criar uma função para calcular e outra para concatenar os algarismos calculados separadamente.
+(repetir até quociente = 0)

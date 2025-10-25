@@ -23,3 +23,59 @@ Exemplos:
 
 **** 
 
+> decimal = 0
+
+> posicao = 0
+
+.
+
+> valor(N) = algarismo(N) * (2^posicao);
+
+> decimal = decimal + valor(N);
+
+> posicao = posicao + 1;
+
+.
+
+> valor(N-1) = algarismo(N-1) * (2^posicao);
+
+> decimal = decimal + valor(N-1);
+
+> posicao = posicao + 1;
+
+.
+
+> valor(N-2) = algarismo(N-2) * (2^posicao);
+
+> decimal = decimal + valor(N-2);
+
+> posicao = posicao + 1;
+
+.
+
+.
+
+.
+
+> valor(3) = algarismo(3) * (2^posicao);
+
+> decimal = decimal + valor(3);
+
+> posicao = posicao + 1;
+
+.
+
+> valor(2) = algarismo(2) * (2^posicao);
+
+> decimal = decimal + valor(2);
+
+> posicao = posicao + 1;
+
+.
+
+> valor(1) = algarismo(1) * (2^posicao);
+
+> decimal = decimal + valor(1);
+
+> posicao = posicao + 1;
+

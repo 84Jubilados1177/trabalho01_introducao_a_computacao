@@ -21,40 +21,64 @@ Exemplos:
 **** 
 
 **Fórmula:**
-> algarismo(N) = Resto(numero/2);
+> decimal = 0
 
-> numero = (numero/2);
-
-. 
-
-> algasrismo(N-1) = Resto(numrero/2);
-
-> numero = (numero/2)
+> negativo = False
 
 .
 
-> algasrismo(N-2) = Resto(numrero/2);
+> se hexadecimal[0] == '-':
 
-> numero = (numero/2)
+> .    hexadecimal = hexadecimal[1:]
 
-.
-.
-.
-
-> algarismo(3) = Resto(numero/2);
-
-> numero = (numero/2);
+> .    negativo = True
 
 .
 
-> algasrismo(2) = Resto(numrero/2);
-
-> numero = (numero/2)
+> tamanho = comprimento(hexadecimal) - 1 // expoente da > potência mais à esquerda
 
 .
 
-> algasrismo(1) = Resto(numrero/2);
+> algarismo(1) = hexadecimal[0]
 
-> numero = (numero/2)
+> valor = mapear(algarismo) * (16^tamanho)
 
-**Observações:** Talvez o ideal seja criar uma função para calcular e outra para concatenar os algarismos calculados separadamente.
+> decimal = decimal + valor
+
+> tamanho -= 1
+
+.
+
+> algarismo(2) = hexadecimal[1]
+
+> valor = mapear(algarismo) * (16^tamanho)
+
+> decimal = decimal + valor
+
+> tamanho -= 1
+
+.
+
+> algarismo(3) = hexadecimal[2]
+
+> valor = mapear(algarismo) * (16^tamanho)
+
+> decimal = decimal + valor
+
+> tamanho -= 1
+
+.
+
+.
+
+.
+
+> algarismo(n) = hexadecimal[n-1]
+
+> valor = mapear(algarismo) * (16^tamanho)
+
+> decimal = decimal + valor
+
+> tamanho -= 1
+
+(se o numero for negativo multiplicamos por -1)

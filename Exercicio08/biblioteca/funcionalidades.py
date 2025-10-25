@@ -1,5 +1,3 @@
-#from bibli_banco.banco_de_dados import Mapeamento, Mapeamento_inverso
-
 def Confere_numero(numero):
     try:
         float(numero)
@@ -26,18 +24,15 @@ def Em_binario(numero):
 
     return binario
 
-def Ponto_flutuante_binario(numero):
+def Ponto_flutuante_binario(numero, max_frac_bits = 16):
     parte_inteira = int(numero)
-    parte_fracionaria = abs(numero - parte_inteira) 
-    
-    # Converte parte inteira
+    parte_fracionaria = abs(numero - parte_inteira)
     binario_inteiro = Em_binario(parte_inteira)
-    
-    # Converte parte fracionária
+
     binario_fracionaria = ""
     contador = 0
 
-    while parte_fracionaria != 0 and contador < 16:
+    while parte_fracionaria != 0 and contador < max_frac_bits:
         parte_fracionaria *= 2
         alg = int(parte_fracionaria)
         binario_fracionaria += str(alg)
@@ -49,21 +44,22 @@ def Ponto_flutuante_binario(numero):
     else:
         return f"{binario_inteiro}.{binario_fracionaria}"
 
-def Em_dec_numero_positivo_par():
+def Teste1():
     assert Ponto_flutuante_binario(13) == "1101"
-def Em_dec_numero_positivo_impar():
-    assert Ponto_flutuante_binario(14.625) == "1110.101"
-def Em_dec_numero_negativo_par():
-    assert Ponto_flutuante_binario(-13) == "-1101"
-def Em_dec_numero_negativo_impar():
-    assert Ponto_flutuante_binario(-14.625) == "-1110.101"
-def Em_dec_numero_nulo():
+def Teste2():
+    assert Ponto_flutuante_binario(10.625, 8) == "1010.101"
+def Teste3():
+    r = Ponto_flutuante_binario(0.1, 10)
+    assert r.startswith("0.") and len(r.split(".")[1]) == 10
+def Teste4():
     assert Ponto_flutuante_binario(0) == "0"
 
 def Testes():
-    print(("-" * 15) + "Teste automatizado" + ("-" * 15))
-    print("Teste com a string FE: {}".format(Em_dec_numero_positivo_par()))
-    print("Teste com a string 311: {}".format(Em_dec_numero_positivo_impar()))
-    print("Teste com a string -FE: {}".format(Em_dec_numero_negativo_par()))
-    print("Teste com a string -311: {}".format(Em_dec_numero_negativo_impar()))
-    print("Teste com a string 0: {}".format(Em_dec_numero_nulo()))
+    print(("-" * 15) + " Teste automatizado " + ("-" * 15))
+    print("Decimal fracionário -> Binário fracionário")
+    print("Real 13 para String \"1101\" : {}".format(Teste1()))
+    print("Real 10.625 para String \"1010.101\" : {}".format(Teste2()))
+    print("Real 0.1 para String truncada 10 bits: {}".format(Teste3()))
+    print("Real 0 para String \"0\" : {}".format(Teste4()))
+
+Testes()

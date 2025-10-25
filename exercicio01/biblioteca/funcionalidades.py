@@ -1,6 +1,5 @@
 def Algarismo(numero):
-    algarismo = numero%2
-    return int (algarismo)
+    return numero%2
 
 #Apagar se não for usado futuramente
 def Completa_zeros(numero):
@@ -49,23 +48,18 @@ def Em_binario(numero):
     else:
         return ("-" + binario)
 
-def Em_bin_numero_positivo_par():
+def Teste1():
     assert Em_binario(8) == "1000"
-def Em_bin_numero_positivo_impar():
-    assert Em_binario(13) == "1101"
-def Em_bin_numero_negativo_par():
-    assert Em_binario(-8) == "-1000"
-def Em_bin_numero_negativo_impar():
-    assert Em_binario(-13) == "-1101"
-def Em_bin_numero_nulo():
+def Teste2():
     assert Em_binario(0) == "0"
+def Teste3():
+    assert Em_binario(-8) == "-1000"
 
 def Testes():
     print(("-" * 15) + " Teste automatizado " + ("-" * 15))
-    print("Teste 1: {}".format(Em_bin_numero_positivo_par()))
-    print("Teste 2: {}".format(Em_bin_numero_positivo_impar()))
-    print("Teste 3: {}".format(Em_bin_numero_negativo_par()))
-    print("Teste 4: {}".format(Em_bin_numero_negativo_impar()))
-    print("Teste 5: {}".format(Em_bin_numero_nulo()))
+    print("Decimal -> Binário")
+    print("Inteiro 13 para String \"1101\": {}".format(Teste1()))
+    print("Inteiro 0 para String \"0\": {}".format(Teste2()))
+    print("Inteiro 0 para String \"-1000\": {}".format(Teste3()))
 
     

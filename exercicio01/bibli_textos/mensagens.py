@@ -15,7 +15,7 @@ def Sentenca():
 
 def Saida():
     Linha()
-    print("saindo ...")
+    print("Saindo ...")
     Linha()
 
 def Erro(Num_erro):

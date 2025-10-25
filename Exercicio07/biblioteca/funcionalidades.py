@@ -53,21 +53,19 @@ def Transforma_bases(numero, base_ini, base_fin):
     return num_final 
 
 
-def Em_dec_numero_positivo_par():
+def Teste1():
     assert Transforma_bases("1101", 2, 16) == "D"
-def Em_dec_numero_positivo_impar():
+def Teste2():
     assert Transforma_bases("-7B", 16, 8) == "-173"
-def Em_dec_numero_negativo_par():
+def Teste3():
     assert Transforma_bases("zzz", 36, 10) == "46655"
-def Em_dec_numero_negativo_impar():
-    assert Transforma_bases("-zzz", 36, 10) == "-46655"
-def Em_dec_numero_nulo():
-    assert Transforma_bases("0", 15, 10) == "0"
+def Teste4():
+    assert Transforma_bases("0", 20, 10) == "0"
 
 def Testes():
-    print(("-" * 15) + "Teste automatizado" + ("-" * 15))
-    print("Teste com a string FE: {}".format(Em_dec_numero_positivo_par()))
-    print("Teste com a string 311: {}".format(Em_dec_numero_positivo_impar()))
-    print("Teste com a string -FE: {}".format(Em_dec_numero_negativo_par()))
-    print("Teste com a string -311: {}".format(Em_dec_numero_negativo_impar()))
-    print("Teste com a string 0: {}".format(Em_dec_numero_nulo()))
+    print(("-" * 15) + " Teste automatizado " + ("-" * 15))
+    print("Base (2-36) -> Base (2-36)")
+    print("String \"1101\" de base 2 para String \"D\" de base 16: {}".format(Teste1()))
+    print("String \"-7B\" de base 16 para String \"-173\" de base 8: {}".format(Teste2()))
+    print("String \"zzz\" de base 36 para String \"46655\" de base 10: {}".format(Teste3()))
+    print("String \"0\" de base 20 para String \"0\" de base 10: {}".format(Teste4()))

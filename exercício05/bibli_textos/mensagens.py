@@ -1,5 +1,5 @@
 def Linha():
-    print("-" * 30)
+    print("-" * 50)
 
 def Instrucoes():
     Linha()
@@ -11,7 +11,7 @@ def Instrucoes():
     print("2 - Sair")
 
 def Sentenca():
-    print("--------Conversor para Hexadecimal:----------")
+    print("-----------Conversor para Hexadecimal:------------")
 
 
 def Saida():
@@ -21,7 +21,7 @@ def Saida():
 
 def Erro(Num_erro):
     if(Num_erro == 1):
-        print("-" * 30)
+        print("-" * 50)
         print("Eu acho que isso não é um decimal :(")
 
     elif(Num_erro == 2):

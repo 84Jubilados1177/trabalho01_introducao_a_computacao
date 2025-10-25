@@ -20,9 +20,9 @@ while (opcao != 2):
             invalido = True
             while (invalido):
                 Sentenca()
-                numero = input("Digite um número em decimal: ")
-                if(Confere_decimal(numero)):
-                    print("{} em Hexadecimal: {}".format(numero, Para_hexadecimal(int(numero))))
+                numero = input("Digite um número em hexadecimal: ")
+                if(Confere_hexadecimal(numero)):
+                    print("{} em decimal: {}".format(numero, Para_decimal(numero)))
                     invalido = False
                     Linha()
                 else:

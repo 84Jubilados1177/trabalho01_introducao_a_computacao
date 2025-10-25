@@ -2,7 +2,7 @@ from bibli_banco import *
 from biblioteca import *
 from bibli_textos import *
 
-opcao = 1
+opcao = -1
 
 while (opcao != 2):
     Instrucoes()
@@ -21,14 +21,13 @@ while (opcao != 2):
             invalido = True
             while (invalido):
                 Sentenca()
-                numero = input("Digite um número decimal real: ")
-                if(Confere_numero(numero)):
-                    print("{} em binário: {}".format(numero , Ponto_flutuante_binario(float(numero))))
+                numero = input("Digite um número binário real: ")
+                if(Confere_binario_flutuante(numero)):
+                    print("{} em decimal: {}".format(numero , binfrac_to_dec(numero)))
                     invalido = False
                     Linha()
                 else:
                     Erro(1)
-                    
             invalido = True
             while(invalido):
                 continuar = input("Deseja testar outro número? (S/N) ")

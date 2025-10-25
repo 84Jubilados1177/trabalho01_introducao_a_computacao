@@ -175,6 +175,8 @@ def Nomes_bases(base):
         return "tetradecimal"
     elif base == 15:
         return "pentadecimal"
+    elif base == 16:
+        return "hexadecimal"
     elif base == 17:
         return "heptadecimal"
     elif base == 18:

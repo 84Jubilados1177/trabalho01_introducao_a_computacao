@@ -17,40 +17,49 @@
 **** 
 
 **Fórmula:**
-> algarismo(N) = Resto(numero/2);
 
-> numero = (numero/2);
+> decimal = 0;
 
-. 
-
-> algasrismo(N-1) = Resto(numrero/2);
-
-> numero = (numero/2)
+> valorPosicional = 1; // representa 8^0
 
 .
 
-> algasrismo(N-2) = Resto(numrero/2);
+> algarismo(último) = octal[posição final];
 
-> numero = (numero/2)
+> decimal = decimal + (algarismo * valorPosicional);
+
+> valorPosicional = valorPosicional * 8;
+
+.
+
+> algarismo(último - 1) = octal[posição final - 1];
+
+> decimal = decimal + (algarismo * valorPosicional);
+
+> valorPosicional = valorPosicional * 8;
+
+.
+
+> algarismo(último - 2) = octal[posição final - 2];
+
+> decimal = decimal + (algarismo * valorPosicional);
+
+> valorPosicional = valorPosicional * 8;
 
 .
 .
 .
 
-> algarismo(3) = Resto(numero/2);
+> algarismo(2) = octal[1];
 
-> numero = (numero/2);
+> decimal = decimal + (algarismo * valorPosicional);
 
-.
-
-> algasrismo(2) = Resto(numrero/2);
-
-> numero = (numero/2)
+> valorPosicional = valorPosicional * 8;
 
 .
 
-> algasrismo(1) = Resto(numrero/2);
+> algarismo(1) = octal[0];
 
-> numero = (numero/2)
+> decimal = decimal + (algarismo * valorPosicional);
 
-**Observações:** Talvez o ideal seja criar uma função para calcular e outra para concatenar os algarismos calculados separadamente.
+> valorPosicional = valorPosicional * 8;

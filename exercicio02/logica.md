@@ -25,6 +25,48 @@ Implemente (que converte uma string binária (com opcional-) para inteiro decima
 
 
 **Fórmula:**
-> #Fazer depois
+> decimal = 0;
 
-**Observações:** Talvez o ideal seja criar uma função para calcular e outra para concatenar os algarismos calculados separadamente.
+> potência = 1; // começa valendo 2^0
+
+.
+
+> algarismo(último) = binario[posição final];
+
+> decimal = decimal + (algarismo * potência);
+
+> potência = potência * 2;
+
+.
+
+> algarismo(último - 1) = binario[posição final - 1];
+
+> decimal = decimal + (algarismo * potência);
+
+> potência = potência * 2;
+
+.
+
+> algarismo(último - 2) = binario[posição final - 2];
+
+> decimal = decimal + (algarismo * potência);
+
+> potência = potência * 2;
+
+.
+.
+.
+
+> algarismo(2) = binario[1];
+
+> decimal = decimal + (algarismo * potência);
+
+> potência = potência * 2;
+
+.
+
+> algarismo(1) = binario[0];
+
+> decimal = decimal + (algarismo * potência);
+
+> potência = potência * 2;

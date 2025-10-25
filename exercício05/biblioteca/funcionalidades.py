@@ -59,21 +59,19 @@ def Para_hexadecimal(numero):
     return hexadecimal
 
 
-def Em_dec_numero_positivo_par():
-    assert Para_hexadecimal(254) == "FE"
-def Em_dec_numero_positivo_impar():
-    assert Para_hexadecimal(785) == "311"
-def Em_dec_numero_negativo_par():
-    assert Para_hexadecimal(-254) == "-FE"
-def Em_dec_numero_negativo_impar():
-    assert Para_hexadecimal(-785) == "-311"
-def Em_dec_numero_nulo():
+def Teste1():
+    assert Para_hexadecimal(255) == "FF"
+def Teste2():
+    assert Para_hexadecimal(4095) == "FFF"
+def Teste3():
+    assert Para_hexadecimal(-26) == "-1A"
+def Teste4():
     assert Para_hexadecimal(0) == "0"
 
 def Testes():
-    print(("-" * 15) + "Teste automatizado" + ("-" * 15))
-    print("Teste com o numero 254: {}".format(Em_dec_numero_positivo_par()))
-    print("Teste com o numero 785: {}".format(Em_dec_numero_positivo_impar()))
-    print("Teste com o numero -254: {}".format(Em_dec_numero_negativo_par()))
-    print("Teste com o numero -785: {}".format(Em_dec_numero_negativo_impar()))
-    print("Teste com o numero 0: {}".format(Em_dec_numero_nulo()))
+    print(("-" * 15) + " Teste automatizado " + ("-" * 15))
+    print("Decimal -> Hexadecimal")
+    print("Inteiro 255 para String \"FF\": {}".format(Teste1()))
+    print("Inteiro 4095 para String \"FFF\": {}".format(Teste2()))
+    print("Inteiro -26 para String \"-1A\": {}".format(Teste3()))
+    print("Inteiro 0 para String \"0\": {}".format(Teste4()))

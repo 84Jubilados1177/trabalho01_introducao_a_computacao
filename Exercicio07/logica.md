@@ -29,60 +29,92 @@
 
 **** 
 
-// --- Etapa 1: Montar uma tabela de conversão ---
+> decimal = 0
 
-Defina tabela_simbolos como:
+> negativo = False
 
-    '0'→0, '1'→1, '2'→2, '3'→3, '4'→4, '5'→5, '6'→6, '7'→7, '8'→8, '9'→9,
-    'A'→10, 'B'→11, 'C'→12, 'D'→13, 'E'→14, 'F'→15,
-    'G'→16, 'H'→17, ..., 'Z'→35
+.
 
-// --- Etapa 2: Converter da base de origem para decimal ---
+> se num[0] == '-':
 
-valor_decimal ← 0
+> .    num = num[1:]
 
-para cada caractere c em numero_texto:
+> .    negativo = True
 
-    valor_c ← tabela_simbolos[c]       // Ex: 'A' → 10
-    valor_decimal ← valor_decimal * base_origem + valor_c
+.
 
-// Agora "valor_decimal" contém o número equivalente em base 10
+> expoente = comprimento(num) - 1 // posição mais à esquerda
 
-// --- Etapa 3: Converter do decimal para base de destino ---
+.
 
-se valor_decimal = 0 então
+> algarismo(1) = num[0]
 
-    resultado ← "0"
+> valor = mapear(algarismo) * (base_from ^ expoente)
 
-senão
+> decimal = decimal + valor
 
-    restos ← lista vazia
-    enquanto valor_decimal > 0 faça
-        resto ← valor_decimal MOD base_destino
-        valor_decimal ← (valor_decimal - resto) / base_destino
-        adicionar resto ao final da lista "restos"
-    fim_enquanto
+> expoente -= 1
 
-    inverter a lista "restos"
+.
 
-// --- Etapa 4: Converter cada resto para símbolo correspondente ---
+> algarismo(2) = num[1]
 
-    resultado ← texto vazio
+> valor = mapear(algarismo) * (base_from ^ expoente)
 
-    para cada valor em "restos":
-        se valor < 10 então
-            símbolo ← caractere correspondente a ('0' + valor)
-        senão
-            símbolo ← caractere correspondente a ('A' + (valor - 10))
-        fim_se
-        concatenar símbolo ao final de "resultado"
-    fim_para
-    fim_se
+> decimal = decimal + valor
 
-// --- Saída ---
+> expoente -= 1
 
-    Escreva "Número convertido:", resultado
+.
 
-FimAlgoritmo
+> algarismo(3) = num[2]
 
-**Observações:** Talvez o ideal seja criar uma função para calcular e outra para concatenar os algarismos calculados separadamente.
+> valor = mapear(algarismo) * (base_from ^ expoente)
+
+> decimal = decimal + valor
+
+> expoente -= 1
+
+.
+
+.
+
+.
+
+(repetir para todos os algarismos do número original)
+
+### Para decimal:
+
+> Conversão de Decimal → base_to (divisões sucessivas)
+
+> resultado = ""
+
+> multiplicador = 1 // opcional, dependendo de como concatenar
+
+.
+
+> resto = decimal % base_to
+
+> decimal = decimal // base_to
+
+> algarismo = mapear_inverso(resto)
+
+> resultado = algarismo + resultado
+
+.
+
+> resto = decimal % base_to
+
+> decimal = decimal // base_to
+
+> algarismo = mapear_inverso(resto)
+
+> resultado = algarismo + resultado
+
+.
+
+.
+
+.
+
+(repetir até decimal = 0)

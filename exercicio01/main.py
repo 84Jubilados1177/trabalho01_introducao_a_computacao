@@ -23,14 +23,14 @@ while (opcao != 2):
             while(invalido):
                 numero = input("Digite um número inteiro: ")
                 if(Eh_numero_inteiro(numero)):
-                    print("{} em binário: {}".format(numero, Em_binario(numero)))
+                    print("{} em binário: {}".format(numero, Em_binario(int(numero))))
                     Linha()
                     invalido = False
                 else:
                     Erro(1)
             invalido = True 
             while(invalido):
-                continuar = input("Deseja testar outro número? (S/N) ")
+                continuar = input("Deseja testar outro número? (S/N)")
                 if(continuar == 'S' or continuar == 's' or continuar == 'N' or continuar == 'n'):
                     invalido = False
                     print(continuar)

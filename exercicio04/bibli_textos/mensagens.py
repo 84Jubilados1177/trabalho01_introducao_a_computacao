@@ -1,9 +1,9 @@
 def Linha():
-    print("-" * 30)
+    print("-" * 50)
 
 def Instrucoes():
     Linha()
-    print("Seja bem-vindo ao conversor para Octal!")
+    print("Seja bem-vindo ao conversor para decimal!")
     print("Para executar os testes digite a opção")
     print("desejada:")
     print("0 - Teste automatizado")
@@ -11,7 +11,7 @@ def Instrucoes():
     print("2 - Sair")
 
 def Sentenca():
-    print("--------Conversor para Octal:----------")
+    print("-------------Conversor para Decimal:--------------")
 
 
 def Saida():
@@ -21,8 +21,9 @@ def Saida():
 
 def Erro(Num_erro):
     if(Num_erro == 1):
-        print("-" * 30)
-        print(("-" * 10) + "Eu acho que isso não é um decimal :(" + ("-" * 10))
+        Linha()
+        print("Eu acho que isso não é um octal :(")
+        Linha()
 
     elif(Num_erro == 2):
         print("Entrada inválida, responda com (S/N) ")

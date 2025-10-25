@@ -20,9 +20,9 @@ while (opcao != 2):
             invalido = True
             while (invalido):
                 Sentenca()
-                numero = input("Digite um número em decimal: ")
-                if(Confere_decimal_str(numero)):
-                    print("{} em Octal: {}".format(numero, Para_octal(numero)))
+                numero = input("Digite um número em octal: ")
+                if(Confere_octal_str(numero)):
+                    print("{} em decimal: {}".format(numero, Para_decimal(numero)))
                     invalido = False
                     Linha()
                 else:

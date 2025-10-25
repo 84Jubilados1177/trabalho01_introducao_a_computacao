@@ -2,6 +2,16 @@ def Algarismo(numero):
     algarismo = numero%10
     return int (algarismo)
 
+def Confere_octal_str(numero):
+    caracteres = ['0', '1', '2', '3', '4', '5', '6', '7', '-']
+    num = numero
+    octal = True
+    for i in num:
+        if not(i in caracteres):
+            octal = False
+    return octal
+
+
 def Confere_decimal(numero):
     try:
         int(numero)
@@ -27,43 +37,34 @@ def Acha_resto(numero):
     resto = numero % 8
     return resto
 
-def Para_octal(numero):
+def Para_decimal(numero):
     negativo = False
 
     if (numero[0] == "-"):
         numero = numero[1:]
         negativo = True
 
-    quociente = int(numero)
-    octal = 0
-    cont = 1
-    while quociente != 0:
-        resto = Acha_resto(quociente)
-        quociente = Cria_quociente(quociente)
-        octal += resto * cont
-        cont *= 10
+    decimal = 0
+    cont = len(numero) - 1 
+
+    for digito in numero:
+        decimal += int(digito) * (8 ** cont)
+        cont -= 1
 
     if (negativo == True):
-        octal *= -1
-    return octal
+        decimal *= -1
+    return decimal
 
-print("{}".format(Para_octal("100")))
-
-def Em_dec_numero_positivo_par():
-    assert Para_octal("8") == 10
-def Em_dec_numero_positivo_impar():
-    assert Para_octal("13") == 15
-def Em_dec_numero_negativo_par():
-    assert Para_octal("-8") == -10
-def Em_dec_numero_negativo_impar():
-    assert Para_octal("-13") == -15
-def Em_dec_numero_nulo():
-    assert Para_octal("0") == 0
+def Teste1():
+    assert Para_decimal("135") == 93
+def Teste2():
+    assert Para_decimal("-100") == -64
+def Teste3():
+    assert Para_decimal("0") == 0
 
 def Testes():
-    print(("-" * 15) + "Teste automatizado" + ("-" * 15))
-    print("Teste com o numero 8: {}".format(Em_dec_numero_positivo_par()))
-    print("Teste com o numero 13: {}".format(Em_dec_numero_positivo_impar()))
-    print("Teste com o numero -8: {}".format(Em_dec_numero_negativo_par()))
-    print("Teste com o numero -13: {}".format(Em_dec_numero_negativo_impar()))
-    print("Teste com o numero 0: {}".format(Em_dec_numero_nulo()))
+    print(("-" * 16) + "Teste automatizado" + ("-" * 16))
+    print("Octal -> Decimal")
+    print("String \"135\" para o inteiro 93: {}".format(Teste1()))
+    print("String \"-100\" para o inteiro -64: {}".format(Teste2()))
+    print("String \"0\" para o inteiro 0: {}".format(Teste3()))
