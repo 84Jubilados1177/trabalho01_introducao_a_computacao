@@ -3,7 +3,7 @@
 **Alunos:** 
 > Isabel Valadares Pessoa
 
-> Pablo (Coloca o seu nome aqui Pablo)
+> Pablo dos Santos Martins
 
 **Semestre:** 2025/2
 
@@ -14,7 +14,7 @@
 ****
 **Versão do Python:** 3.13.7
 
-Para testar cada um dos códigos referentes às suas respectivas questões, basta entrar na pasta da questão, compilar o arquivo main.py na própria pasta em que ele se localiza e seguir as instruções que aparecerem no terminal.
+Para testar cada um dos códigos referentes às suas respectivas questões, compilar o arquivo main.py na própria pasta em que ele se localiza e seguir as instruções que aparecerem no terminal.
 A seguir, um exemplo sobre como seguir tais instruções:
 
 ## Menu:
